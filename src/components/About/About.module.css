@@ -1,0 +1,159 @@
+.About_wrapper {
+    z-index: 1;
+}
+
+.AboutCard {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    background-color:#1d1d1d;
+    margin-top: -180px;
+    z-index: 9;
+    position: relative;
+}
+
+.AboutCard::after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: url(./../../assets/pattern_white.png);
+    top: 10%;
+    left: 10%;
+    z-index: -1;
+    opacity: 0.4;
+}
+
+.AboutCard .About_Card_content {
+    width: 50%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 0 50px;
+    flex-direction: column;
+    color: #fff;
+}
+
+.AboutCard .About_Card_content h2 {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 50px;
+}
+
+.AboutCard .About_Card_content p {
+    font-size: 16px;
+    margin: 15px 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width: 90%;
+}
+
+.AboutCard .about_card_image {
+    width: 50%;
+}
+
+.AboutCard .about_card_image img{
+    width: 100%;
+    height: 100%;
+}
+
+.About_Content {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    color: #fff;
+}
+
+.About_Content .about_card {
+    width: 100%;
+    display: flex;
+    align-items:end;
+    gap: 20px;
+    position: relative;
+}
+
+.About_Content .about_card::after, .About_Content .about_card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 20%;
+    width: 1px;
+    height: 0%;
+    background-color: var(--primary-color);
+    transition: .6s;
+}
+
+.About_Content .about_card:hover::after {
+    height: 100%;
+}
+
+.About_Content .about_card::before {
+    background-color: rgba(255, 255, 255, 0.2);
+    height: 100%;
+}
+
+.About_Content .about_card h3 {
+    font-size: 30px;
+    color: var(--primary-color);
+    width: 65px;
+}
+
+.About_Content .about_card h3 span {
+    font-size: 20px;
+    display: block;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 200;
+}
+
+.About_Content .about_card p {
+    width: 60%;
+}
+
+
+@media screen and (max-width: 1400px) {
+    .About_Content .about_card::after, .About_Content .about_card::before {
+        left: 15%;
+    }
+}
+
+@media screen and (max-width:1200px) {
+    .About_Content .about_card::after, .About_Content .about_card::before {
+        left: 30%;
+    }
+
+    .About_Content {
+        margin-top: 30px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .AboutCard {
+        flex-direction: column-reverse;
+    }
+
+    .AboutCard .About_Card_content {
+        width: 100%;
+        padding: 40px;
+    }
+
+    .About_Content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .AboutCard .about_card_image {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .About_Content {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .About_Content .about_card::after, .About_Content .about_card::before {
+        left:20%
+    }
+    .AboutCard {
+        width: 100%;
+    }
+}
